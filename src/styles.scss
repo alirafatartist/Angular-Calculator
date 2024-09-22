@@ -1,13 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-$main-dark-color: #242431;
-$main-op-color: #4b5efc;
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rubik", sans-serif;
   transition: 0.4s all;
 }
-
