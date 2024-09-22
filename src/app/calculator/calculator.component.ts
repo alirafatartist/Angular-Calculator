@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { evaluate } from 'mathjs';
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -27,7 +27,7 @@ export class CalculatorComponent {
       this.result = '0';
     } else {
       try {
-        this.result = eval(this.replaceOperations());
+        this.result = evaluate(this.replaceOperations());
       } catch (error) {
         this.clearInput();
         this.result = 'Error';
