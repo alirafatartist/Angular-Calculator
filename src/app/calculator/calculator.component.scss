@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+$main-dark-color: #242431;
+$main-op-color: #4b5efc;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  transition: 0.4s all;
+}
+body {
+  background: $main-dark-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  .container {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    gap: 3rem;
+    .up {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      .settings {
+        text-align: center;
+        cursor: pointer;
+        margin-bottom: 30px;
+        color: $main-op-color;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .input,
+      .result {
+        text-align: right;
+        width: 246.5px;
+        overflow: auto;
+        border: none;
+        outline: none;
+        background: transparent;
+      }
+      .input {
+        color: #b5b4b6;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .result {
+        font-size: 4rem;
+      }
+    }
+    .down {
+      .main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+        padding: 20px;
+        button {
+          outline: none;
+          border: none;
+          font-size: 1.4rem;
+          padding: 10px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+          &.gr {
+            background: #d2d3da;
+          }
+          &.operation {
+            background: $main-op-color;
+            color: #fff;
+            font-weight: bold;
+          }
+          &:active {
+            transition: none;
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+}
+body.dark {
+  background: #fff;
+
+  .container {
+    background: $main-dark-color;
+    .up {
+      .settings {
+        color: $main-op-color;
+      }
+      .result {
+        color: #fff;
+      }
+    }
+    .down {
+      box-shadow: 0px 1px 10px 0px #fff;
+
+      .main {
+        button {
+          color: #fff;
+          background: #2e2f38;
+          &.gr {
+            background: #4e505f;
+          }
+          &.operation {
+            background: $main-op-color;
+
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+.spin {
+  transform: rotate(360deg);
+  color: rgb(255, 140, 0);
+}

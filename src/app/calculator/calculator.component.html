@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/7378/7378257.png"
+      type="image/x-icon"
+    />
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Calculator</title>
+  </head>
+  <body [class.dark]="defaultTheme == 'dark_mode'">
+    <div class="container">
+      <div class="up">
+        <div class="settings" (click)="changeTheme()">
+          <span
+            class="material-symbols-outlined"
+            [class.spin]="defaultTheme == 'light_mode'"
+          >
+            {{ defaultTheme }}
+          </span>
+        </div>
+        <input type="text" class="input" readonly [value]="input" />
+        <input type="text" class="result" readonly [value]="result" />
+      </div>
+      <div class="down">
+        <div class="main">
+          <button class="gr ac" (click)="clearInput()">AC</button>
+          <button class="gr" (click)="removeCharacter()">
+            <span class="material-symbols-outlined backspace"> backspace </span>
+          </button>
+          <button (click)="appindtodisplay('%')" class="gr">%</button>
+          <button (click)="appindtodisplay('÷')" class="operation">÷</button>
+          <button (click)="appindtodisplay('7')">7</button>
+          <button (click)="appindtodisplay('8')">8</button>
+          <button (click)="appindtodisplay('9')">9</button>
+          <button (click)="appindtodisplay('×')" class="operation">×</button>
+          <button (click)="appindtodisplay('4')">4</button>
+          <button (click)="appindtodisplay('5')">5</button>
+          <button (click)="appindtodisplay('6')">6</button>
+          <button (click)="appindtodisplay('-')" class="operation">-</button>
+          <button (click)="appindtodisplay('1')">1</button>
+          <button (click)="appindtodisplay('2')">2</button>
+          <button (click)="appindtodisplay('3')">3</button>
+          <button (click)="appindtodisplay('+')" class="operation">+</button>
+          <button>
+            <span class="material-symbols-outlined"> construction </span>
+          </button>
+          <button (click)="appindtodisplay('.')">.</button>
+          <button (click)="appindtodisplay('0')" class="zero">0</button>
+          <button class="operation" (click)="equal()">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
