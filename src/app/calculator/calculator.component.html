@@ -39,17 +39,11 @@
           </button>
           <button (click)="appindtodisplay('%')" class="gr">%</button>
           <button (click)="appindtodisplay('÷')" class="operation">÷</button>
-          <button (click)="appindtodisplay('7')">7</button>
-          <button (click)="appindtodisplay('8')">8</button>
-          <button (click)="appindtodisplay('9')">9</button>
+          <button *ngFor="let num of ['7', '8', '9']" (click)="appindtodisplay(num)">{{num}}</button>
           <button (click)="appindtodisplay('×')" class="operation">×</button>
-          <button (click)="appindtodisplay('4')">4</button>
-          <button (click)="appindtodisplay('5')">5</button>
-          <button (click)="appindtodisplay('6')">6</button>
+          <button *ngFor="let num of ['4','5','6']" (click)="appindtodisplay(num)">{{num}}</button>
           <button (click)="appindtodisplay('-')" class="operation">-</button>
-          <button (click)="appindtodisplay('1')">1</button>
-          <button (click)="appindtodisplay('2')">2</button>
-          <button (click)="appindtodisplay('3')">3</button>
+          <button *ngFor="let num of ['1','2','3']" (click)="appindtodisplay(num)">{{num}}</button>
           <button (click)="appindtodisplay('+')" class="operation">+</button>
           <button>
             <span class="material-symbols-outlined"> construction </span>
